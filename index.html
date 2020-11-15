@@ -26,10 +26,10 @@
             let blueBoxTimeline = gsap.timeline()
             .to('.bar', { duration: 1, delay: 0.5, width: '5vw', ease: "power3.out"})
             .to('.bar', { duration: 1, height: '5vw', ease: "power3.out"})
-            .from('.hi', { duration: 1, y:'10vw', ease: "elastic.out" })
+            .from('.hi', { duration: 1, y:'10vw', ease: "elastic.out", onComplete: ()=>textChanges.play()})
         //text that changes
-            //First way: attaching ".to" a master timeline
-            let textChanges =gsap.timeline({repeat: -1})
+            //First way: attaching ".to" a master timeline that is trigger after first timeline finishes
+            let textChanges =gsap.timeline({repeat: -1}).pause()
             // .to('.text', {duration:1, text: "papa", repeat:1, yoyo: true})
             // .to('.text', {duration:1, text: "mama", repeat:1, yoyo: true})
             //Second way: creating an array
