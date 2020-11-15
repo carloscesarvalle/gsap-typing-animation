@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>GSAP Typing Animation</title>
+</head>
+<body>
+    <div>
+        <span class="bar"></span>
+        <span class="hi">Hi, I'm </span>
+        <span class="text"></span>
+        <span class="underscore">_</span>
+    </div>   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/EasePack.min.js"></script>
+    <script>
+
+        //underscore flashing 
+            gsap.to('.underscore', {duration: 1, opacity:0, repeat:-1, ease: "power2.inOut" })
+        //text and blue bar effect
+            let blueBoxTimeline = gsap.timeline()
+            .to('.bar', { duration: 1, delay: 0.5, width: '5vw', ease: "power3.out"})
+            .to('.bar', { duration: 1, height: '5vw', ease: "power3.out"})
+            .from('.hi', { duration: 1, y:'10vw', ease: "elastic.out" })
+
+
+    </script>   
+</body>
+</html>

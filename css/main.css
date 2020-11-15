@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 2rem;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;  
+}
+
+div {
+    margin-left: 10vw;
+    position: relative;
+}
+
+.bar {
+    background-color: blue;
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    height: 0.25vh;
+    bottom: 0;
+    left: 0;
+}
+
+.hi {
+    color: white;
+    display: inline-block;
+}
