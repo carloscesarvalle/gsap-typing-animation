@@ -28,8 +28,15 @@
             .to('.bar', { duration: 1, height: '5vw', ease: "power3.out"})
             .from('.hi', { duration: 1, y:'10vw', ease: "elastic.out" })
         //text that changes
-            gsap.to('.text', {duration:1, text: "papa"})
-
+            //First way: attaching ".to" a master timeline
+            let textChanges =gsap.timeline({repeat: -1})
+            // .to('.text', {duration:1, text: "papa", repeat:1, yoyo: true})
+            // .to('.text', {duration:1, text: "mama", repeat:1, yoyo: true})
+            //Second way: creating an array
+            let words = ["papa", "mama", "son", "daughter"]
+            words.forEach(element=>{
+                textChanges.add(gsap.to('.text', {duration:1, text: element, repeat:1, yoyo: true})) 
+            })
     </script>   
 </body>
 </html>
